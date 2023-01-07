@@ -13,5 +13,6 @@
 <main class="container-fluid mt-5">
     <jsp:doBody/>
 </main>
+<jsp:include page="/WEB-INF/pages/footer.jsp" />
 </body>
 </html>

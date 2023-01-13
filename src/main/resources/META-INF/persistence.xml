@@ -10,7 +10,7 @@
         <class>com.pos.pos.entities.OrderDetails</class>
 
         <properties>
-            <property name="jakarta.persistence.schema-generation.database.action" value="create" />
+            <property name="jakarta.persistence.schema-generation.database.action" value="create-or-extend-tables" />
         </properties>
     </persistence-unit>
 </persistence>

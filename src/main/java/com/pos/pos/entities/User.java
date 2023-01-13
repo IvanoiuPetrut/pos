@@ -59,14 +59,4 @@ public class User {
         this.usertype = usertype;
     }
 
-    @OneToMany(mappedBy = "ManyToOne")
-    private Collection<Order> orders;
-
-    public Collection<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(Collection<Order> orders) {
-        this.orders = orders;
-    }
 }

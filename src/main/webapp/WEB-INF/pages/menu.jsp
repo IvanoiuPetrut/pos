@@ -1,4 +1,4 @@
-<header class="d-flex justify-content-center py-3">
+<header class="d-flex justify-content-center py-3 bg-light">
     <ul class="nav nav-pills">
         <li class="nav-item"><a href="${pageContext.request.contextPath}" class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf
 ("/")) eq '/' ? ' active' : ''}" aria-current="page">Home</a></li>

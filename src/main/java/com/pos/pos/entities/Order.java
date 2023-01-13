@@ -52,25 +52,4 @@ public class Order {
         this.date = date;
     }
 
-    @ManyToOne
-    private Order manyToOne;
-
-    public Order getManyToOne() {
-        return manyToOne;
-    }
-
-    public void setManyToOne(Order manyToOne) {
-        this.manyToOne = manyToOne;
-    }
-
-    @OneToMany
-    private Collection<Product> oneToMany;
-
-    public Collection<Product> getOneToMany() {
-        return oneToMany;
-    }
-
-    public void setOneToMany(Collection<Product> oneToMany) {
-        this.oneToMany = oneToMany;
-    }
 }

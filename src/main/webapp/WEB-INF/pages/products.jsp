@@ -5,6 +5,7 @@
   <h1>
     Products
   </h1>
+  ${products}
   <h3>
     Number of products: ${numberOfProducts}
   </h3>

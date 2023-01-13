@@ -2,10 +2,8 @@ package com.pos.pos.entities;
 
 import jakarta.persistence.*;
 
-import java.util.Collection;
-
 @Entity
-public class Order {
+public class OrderDetails {
     @Id
     @GeneratedValue
     private Long id;
@@ -18,9 +16,7 @@ public class Order {
         return id;
     }
 
-//    private Long idUser;
-//
-//    private String idProduct;
+    @Basic
 
     private String paymentType;
 

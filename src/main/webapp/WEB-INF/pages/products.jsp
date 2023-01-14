@@ -6,6 +6,9 @@
     <h1>
         Products
     </h1>
+
+    <a href="${pageContext.request.contextPath}/AddProduct" class=" btn btn-primary btn-lg">Add Product</a>
+
     <c:forEach items="${products}" var="product">
         <div class="container">
             <div class="row">

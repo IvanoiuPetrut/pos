@@ -2,7 +2,9 @@ package com.pos.pos.entities;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class User {
@@ -59,4 +61,6 @@ public class User {
         this.usertype = usertype;
     }
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<OrderDetails> orders = new ArrayList<>();
 }

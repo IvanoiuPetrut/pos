@@ -2,6 +2,8 @@ package com.pos.pos.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Product {
     @Id
@@ -74,4 +76,7 @@ public class Product {
     public void setType(String type) {
         this.type = type;
     }
+
+    @ManyToMany(mappedBy = "products")
+    private List<OrderDetails> orders;
 }

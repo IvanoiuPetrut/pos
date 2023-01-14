@@ -11,7 +11,7 @@
     <div class="row g-3">
       <div class="col-sm-6">
         <label for="name" class="form-label">Name</label>
-        <input type="text" class="form-control" id="name" placeholder="Tomato" value="" required="">
+        <input type="text" class="form-control" id="name" placeholder="Tomato" value="" required="" name="name">
         <div class="invalid-feedback">
           Valid name is required.
         </div>
@@ -20,7 +20,7 @@
       <div class="col-12">
         <label for="description" class="form-label">Description</label>
         <div class="input-group has-validation">
-          <input type="text" class="form-control" id="description" placeholder="Very tasty..." required="">
+          <input type="text" class="form-control" id="description" placeholder="Very tasty..." required="" name="description">
           <div class="invalid-feedback">
             Description is required.
           </div>
@@ -29,7 +29,7 @@
 
       <div class="col-12">
         <label for="price" class="form-label">Price</label>
-        <input type="text" class="form-control" id="price" placeholder="9.99">
+        <input type="text" class="form-control" id="price" placeholder="9.99" name="price">
         <div class="invalid-feedback">
           Please enter a valid price.
         </div>
@@ -37,7 +37,7 @@
 
       <div class="col-12">
         <label for="stock" class="form-label">Stock</label>
-        <input type="number" class="form-control" id="stock" placeholder="2312">
+        <input type="number" class="form-control" id="stock" placeholder="2312" name="stock">
         <div class="invalid-feedback">
           Please enter a valid stock.
         </div>
@@ -48,18 +48,17 @@
 
     <h4 class="mb-3">Type</h4>
 
-    <div class="my-3">
-      <div class="form-check">
-        <input id="fruit" name="productType" type="radio" class="form-check-input" checked="" required="">
-        <label class="form-check-label" for="fruit">Fruit</label>
-      </div>
-      <div class="form-check">
-        <input id="vegetable" name="productType" type="radio" class="form-check-input" required="">
-        <label class="form-check-label" for="vegetable">Vegetable</label>
-      </div>
-      <div class="form-check">
-        <input id="electronic" name="productType" type="radio" class="form-check-input" required="">
-        <label class="form-check-label" for="electronic">Electronic Device</label>
+    <div class="col-md-5">
+      <label for="country" class="form-label">Type</label>
+      <select class="form-select" id="country" required="" name="type">
+        <option value="">Choose...</option>
+        <option value="fruit">Fruit</option>
+        <option value="vegetable">Vegetable</option>
+        <option value="clothing">Clothing</option>
+        <option value="electronic">Electronic Device</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select a valid type.
       </div>
     </div>
 

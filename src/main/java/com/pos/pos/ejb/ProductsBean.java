@@ -32,4 +32,20 @@ public class ProductsBean {
             throw new EJBException(ex);
         }
     }
+
+    public void createProduct(ProductDto productDto) {
+        LOG.info("createProduct");
+        try {
+            Product product = new Product();
+            product.setBarCode(productDto.getBarCode());
+            product.setName(productDto.getName());
+            product.setPrice(productDto.getPrice());
+            product.setStock(productDto.getStock());
+            product.setDescription(productDto.getDescription());
+            product.setType(productDto.getType());
+            entityManager.persist(product);
+        } catch (Exception ex) {
+            throw new EJBException(ex);
+        }
+    }
 }

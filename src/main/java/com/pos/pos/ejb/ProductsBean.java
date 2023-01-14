@@ -73,4 +73,14 @@ public class ProductsBean {
             throw new EJBException(ex);
         }
     }
+
+    public void deleteProduct(ProductDto productDto) {
+        LOG.info("deleteProduct");
+        try {
+            Product product = entityManager.find(Product.class, productDto.getBarCode()); // find by primary key (barCode)
+            entityManager.remove(product);
+        } catch (Exception ex) {
+            throw new EJBException(ex);
+        }
+    }
 }

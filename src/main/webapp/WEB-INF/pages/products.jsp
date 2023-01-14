@@ -7,7 +7,12 @@
         Products
     </h1>
 
-    <a href="${pageContext.request.contextPath}/AddProduct" class="btn btn-primary btn-lg">Add Product</a>
+
+    ${pageContext.request.isUserInRole('WRITE_PRODUCTS')}
+
+    <c:if test="${pageContext.request.isUserInRole('WRITE_PRODUCTS')}">
+        <a href="${pageContext.request.contextPath}/AddProduct" class="btn btn-primary btn-lg">Add Product</a>
+    </c:if>
 
     <c:forEach items="${products}" var="product">
         <div class="container">

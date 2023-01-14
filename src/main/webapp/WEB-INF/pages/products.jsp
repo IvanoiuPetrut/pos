@@ -7,7 +7,7 @@
         Products
     </h1>
 
-    <a href="${pageContext.request.contextPath}/AddProduct" class=" btn btn-primary btn-lg">Add Product</a>
+    <a href="${pageContext.request.contextPath}/AddProduct" class="btn btn-primary btn-lg">Add Product</a>
 
     <c:forEach items="${products}" var="product">
         <div class="container">
@@ -28,10 +28,10 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Category: ${product.type}</li>
                         <li class="list-group-item">Stock: ${product.stock}</li>
-                        <li class="list-group-item">Vestibulum at eros</li>
                     </ul>
                     <div class="card-body">
-                        <a href="#" class="card-link">Buy</a>
+                        <a href="#" class="btn btn-primary btn-lg">Add to cart</a>
+                        <a href="${pageContext.request.contextPath}/EditProduct?barCode=${product.barCode}" class="btn btn-secondary btn-lg">Edit</a>
                         <p>Price: ${product.price}</p>
                     </div>
                 </div>

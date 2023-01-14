@@ -48,4 +48,29 @@ public class ProductsBean {
             throw new EJBException(ex);
         }
     }
+
+    public ProductDto findProductByBarCode(Long barCode) {
+        LOG.info("findProductByBarCode");
+        try {
+            Product product = entityManager.find(Product.class, barCode); // find by primary key (barCode)
+            return new ProductDto(product.getBarCode(), product.getName(), product.getPrice(), product.getStock(), product.getDescription(), product.getType());
+        } catch (Exception ex) {
+            throw new EJBException(ex);
+        }
+    }
+
+    public void updateProduct(ProductDto productDto) {
+        LOG.info("updateProduct");
+        try {
+            Product product = entityManager.find(Product.class, productDto.getBarCode()); // find by primary key (barCode)
+            product.setName(productDto.getName());
+            product.setPrice(productDto.getPrice());
+            product.setStock(productDto.getStock());
+            product.setDescription(productDto.getDescription());
+            product.setType(productDto.getType());
+            entityManager.merge(product);
+        } catch (Exception ex) {
+            throw new EJBException(ex);
+        }
+    }
 }

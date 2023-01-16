@@ -7,17 +7,13 @@
         Products
     </h1>
 
+    <a href="${pageContext.request.contextPath}/AddProduct" class="btn btn-primary btn-lg">Add Product</a>
 
-    ${pageContext.request.isUserInRole('WRITE_PRODUCTS')}
 
-    <c:if test="${pageContext.request.isUserInRole('WRITE_PRODUCTS')}">
-        <a href="${pageContext.request.contextPath}/AddProduct" class="btn btn-primary btn-lg">Add Product</a>
-    </c:if>
-
-    <c:forEach items="${products}" var="product">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4">
+    <div class="container">
+        <div class="row">
+            <c:forEach items="${products}" var="product">
+                <div class="col-sm-4 com-md-4 col-lg-4">
                     <svg class="bd-placeholder-img card-img-top" width="100%" height="180"
                          xmlns="http://www.w3.org/2000/svg"
                          preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
@@ -43,7 +39,8 @@
                         <p>Price: ${product.price}</p>
                     </div>
                 </div>
-            </div>
+            </c:forEach>
         </div>
-    </c:forEach>
+    </div>
+
 </t:pageTemplate>

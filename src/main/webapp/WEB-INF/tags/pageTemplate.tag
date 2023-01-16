@@ -14,5 +14,6 @@
     <jsp:doBody/>
 </main>
 <jsp:include page="/WEB-INF/pages/footer.jsp" />
+<script src="${pageContext.request.contextPath}/scripts/cart.js"></script>
 </body>
 </html>

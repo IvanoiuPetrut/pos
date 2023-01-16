@@ -1,5 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+
 <header class="d-flex justify-content-center py-3 bg-light">
     <ul class="nav nav-pills">
         <li class="nav-item"><a href="${pageContext.request.contextPath}" class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf
@@ -19,6 +20,7 @@
                 <a class="nav-link" href="${pageContext.request.contextPath}/Logout">Logout</a>
             </c:otherwise>
         </c:choose>
-        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="${pageContext.request.contextPath}/cart.jsp" class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf
+("/")) eq '/cart.jsp' ? ' active' : ''}">Cart</a></li>
     </ul>
 </header>

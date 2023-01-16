@@ -14,6 +14,9 @@
         <a href="${pageContext.request.contextPath}/AddProduct" class="btn btn-primary btn-lg">Add Product</a>
     </c:if>
 
+    <a href="${pageContext.request.contextPath}/AddProduct" class="btn btn-primary btn-lg">Add Product</a>
+    <%--    <a href="${pageContext.request.contextPath}/AddProduct" class="btn btn-primary btn-lg">Add Product</a>--%>
+
     <c:forEach items="${products}" var="product">
         <div class="container">
             <div class="row">
@@ -40,6 +43,9 @@
                            class="btn btn-secondary btn-lg">Edit</a>
                         <a href="${pageContext.request.contextPath}/DeleteProduct?barCode=${product.barCode}"
                            class="btn btn-danger btn-lg">Delete</a>
+                        <button id="add-to-cart-${product.barCode}" data-barCode='${product.barCode}'
+                                data-productName='${product.name}' data-productPrice='${product.price}'>Add to cart JS
+                        </button>
                         <p>Price: ${product.price}</p>
                     </div>
                 </div>

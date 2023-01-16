@@ -15,10 +15,9 @@
     </c:if>
 
     <a href="${pageContext.request.contextPath}/AddProduct" class="btn btn-primary btn-lg">Add Product</a>
-    <%--    <a href="${pageContext.request.contextPath}/AddProduct" class="btn btn-primary btn-lg">Add Product</a>--%>
+    <div class="container">
+        <c:forEach items="${products}" var="product">
 
-    <c:forEach items="${products}" var="product">
-        <div class="container">
             <div class="row">
                 <div class="col-sm-4">
                     <svg class="bd-placeholder-img card-img-top" width="100%" height="180"
@@ -50,6 +49,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </c:forEach>
+        </c:forEach>
+    </div>
 </t:pageTemplate>

@@ -1,5 +1,17 @@
 <%@tag description="base page template" pageEncoding="UTF-8"%>
 <%@attribute name="pageTitle"%>
+<style>
+    body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer {
+        margin-top: auto;
+    }
+</style>
 
 <!DOCTYPE html>
 <html>
@@ -13,7 +25,9 @@
 <main class="container-fluid mt-5 py-6">
     <jsp:doBody/>
 </main>
-<jsp:include page="/WEB-INF/pages/footer.jsp" />
+<div class="footer">
+    <jsp:include page="/WEB-INF/pages/footer.jsp" />
+</div>
 <script src="${pageContext.request.contextPath}/scripts/cart.js"></script>
 </body>
 </html>

@@ -9,11 +9,12 @@
 
     <a href="${pageContext.request.contextPath}/AddProduct" class="btn btn-primary btn-lg">Add Product</a>
 
-
+    
     <div class="container">
         <div class="row">
             <c:forEach items="${products}" var="product">
                 <div class="col-sm-4 com-md-4 col-lg-4">
+
                     <svg class="bd-placeholder-img card-img-top" width="100%" height="180"
                          xmlns="http://www.w3.org/2000/svg"
                          preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
@@ -36,6 +37,9 @@
                            class="btn btn-secondary btn-lg">Edit</a>
                         <a href="${pageContext.request.contextPath}/DeleteProduct?barCode=${product.barCode}"
                            class="btn btn-danger btn-lg">Delete</a>
+                        <button id="add-to-cart-${product.barCode}" data-barCode='${product.barCode}'
+                                data-productName='${product.name}' data-productPrice='${product.price}'>Add to cart JS
+                        </button>
                         <p>Price: ${product.price}</p>
                     </div>
                 </div>

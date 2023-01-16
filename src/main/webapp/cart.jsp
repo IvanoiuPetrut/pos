@@ -21,15 +21,36 @@
                     <div class="card-body">
                         <h5 class="card-title price">Total Pice:</h5>
                         <div class="col-md-5">
-                            <p>Please select the payment method</p>
-                            <label for="paymentType" class="form-label">Type</label>
-                            <select class="form-select" id="paymentType" required="" name="type">
-                                <option value="">Choose...</option>
-                                <option value="fruit">POS</option>
-                                <option value="vegetable">Cash</option>
-                            </select>
                         </div>
-                        <button class="btn btn-primary">Checkout</button>
+                        <form class="needs-validation" novalidate="" method="POST"
+                              action="${pageContext.request.contextPath}/Checkout">
+                            <input type="text" class="form-control" id="price" placeholder="Tomato" value=""
+                                   name="price">
+                            <input type="text" class="form-control" id="date" placeholder="Tomato" value=""
+                                   name="date">
+                            <input type="text" class="form-control" id="refounded" placeholder="Tomato" value=""
+                                   name="refounded">
+
+                            <hr class="my-4">
+
+                            <h4 class="mb-3">Type</h4>
+
+                            <div class="col-md-5">
+                                <label for="paymentType" class="form-label">Payment Type</label>
+                                <select class="form-select" id="paymentType" required="" name="paymentType">
+                                    <option value="">Choose...</option>
+                                    <option value="fruit">Cash</option>
+                                    <option value="vegetable">Card</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a valid type.
+                                </div>
+                            </div>
+
+                            <hr class="my-4">
+
+                            <button class="btn btn-primary btn-lg" type="submit" id="checkout">Checkout</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -40,6 +61,11 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const cart = JSON.parse(localStorage.getItem('cart'));
+
+            document.querySelector('#price').value = cart.reduce((acc, item) => acc + item.price, 0);
+            document.querySelector('#date').value = new Date().toLocaleString();
+            document.querySelector('#refounded').value = false;
+
             const list = document.querySelector('#cart-list');
             let totalPrice = 0;
             for (let i = 0; i < cart.length; i++) {
@@ -102,6 +128,9 @@
             }
 
             document.querySelector('.price').innerText = "Total Price: " + totalPrice + ' $';
+            document.querySelector('#checkout').addEventListener('click', function () {
+                localStorage.removeItem('cart');
+            });
         });
     </script>
 

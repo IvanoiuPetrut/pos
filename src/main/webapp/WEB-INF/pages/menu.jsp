@@ -24,3 +24,9 @@
 ("/")) eq '/cart.jsp' ? ' active' : ''}">Cart</a></li>
     </ul>
 </header>
+
+<style>
+    header {
+        z-index: 999999;
+    }
+</style>

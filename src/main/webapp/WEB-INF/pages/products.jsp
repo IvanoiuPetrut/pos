@@ -32,14 +32,13 @@
                         <li class="list-group-item">Stock: ${product.stock}</li>
                     </ul>
                     <div class="card-body">
-                        <a href="#" class="btn btn-primary btn-lg">Add to cart</a>
-                        <a href="${pageContext.request.contextPath}/EditProduct?barCode=${product.barCode}"
-                           class="btn btn-secondary btn-lg">Edit</a>
-                        <a href="${pageContext.request.contextPath}/DeleteProduct?barCode=${product.barCode}"
-                           class="btn btn-danger btn-lg">Delete</a>
-                        <button id="add-to-cart-${product.barCode}" data-barCode='${product.barCode}'
-                                data-productName='${product.name}' data-productPrice='${product.price}'>Add to cart JS
+                        <button class="btn btn-primary btn-lg" id="add-to-cart-${product.barCode}" data-barCode='${product.barCode}'
+                                data-productName='${product.name}' data-productPrice='${product.price}'>Add to cart
                         </button>
+                        <a href="${pageContext.request.contextPath}/EditProduct?barCode=${product.barCode}"
+                        class="btn btn-secondary btn-lg">Edit</a>
+                        <a href="${pageContext.request.contextPath}/DeleteProduct?barCode=${product.barCode}"
+                        class="btn btn-danger btn-lg">Delete</a>
                         <p>Price: ${product.price}</p>
                     </div>
                 </div>

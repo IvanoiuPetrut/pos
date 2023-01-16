@@ -81,4 +81,16 @@ public class UserBean {
             throw new EJBException(ex);
         }
     }
+
+    public UserDto findUserByUsername(String userName) {
+        LOG.info("findUserByUsername");
+        try {
+            TypedQuery<User> typedQuery = entityManager.createQuery("Select u from User u where u.username = :username", User.class);
+            typedQuery.setParameter("username", userName);
+            User user = typedQuery.getSingleResult();
+            return new UserDto(user.getId(), user.getUsername(), user.getEmail(), user.getPassword(), user.getUsertype());
+        } catch (Exception ex) {
+            throw new EJBException(ex);
+        }
+    }
 }
